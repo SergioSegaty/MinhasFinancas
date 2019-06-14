@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h1>Lisa de Contas a Pagar</h1>
+    </div>
+
+    <div>
+        <table class="tabela">
+            <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Valor</th>
+                <th>Tipo</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < ViewBag.ContasPagar.Count; i++)
+                {
+                <tr>
+                    <td>@ViewBag.ContasPagar[i].Id</td>
+                    <td>@ViewBag.ContasPagar[i].Nome</td>
+                    <td>@ViewBag.ContasPagar[i].Valor</td>
+                    <td>@ViewBag.ContasPagar[i].Tipo</td>
+                    <td>@ViewBag.ContasPagar[i].Status</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class ContasPagar
+    public class ContaPagar
     {
         public int Id;
         public string Nome;
         public decimal Valor;
         public string Tipo;
         public string Descricao;
-        public bool Status;
+        public string Status;
     }
 }
