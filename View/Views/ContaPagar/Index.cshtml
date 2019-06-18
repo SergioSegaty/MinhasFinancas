@@ -15,6 +15,14 @@
     <div> 
         <h1>Lisa de Contas a Pagar</h1>
     </div>
+    <a href="/contapagar/cadastro">Novo Cadastro</a>
+    <form action="/contapagar/index" method="get">
+
+        <label for="campo-pesquisa">Pesquisa</label>
+        <input type="text" id="campo-pesquisa" name="pesquisa" />
+
+    </form>
+
 
     <div>
         <table class="tabela">
@@ -37,6 +45,12 @@
                     <td>@ViewBag.ContasPagar[i].Valor</td>
                     <td>@ViewBag.ContasPagar[i].Tipo</td>
                     <td>@ViewBag.ContasPagar[i].Status</td>
+                    <td>
+                        <a href="/contapagar/editar?id=@ViewBag.ContasPagar[i].Id">Editar</a>
+                    </td>
+                    <td>
+                        <a href="/contapagar/apagar?id=@ViewBag.ContasPagar[i].Id">Deletar</a>
+                    </td>
                 </tr>
                 }
             </tbody>

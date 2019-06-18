@@ -4,3 +4,9 @@ C:\Users\62110\Desktop\repositorio Sergio\MinhasFinancas\Model\obj\Debug\Model.c
 C:\Users\62110\Desktop\repositorio Sergio\MinhasFinancas\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 C:\Users\62110\Desktop\repositorio Sergio\MinhasFinancas\Model\obj\Debug\Model.dll
 C:\Users\62110\Desktop\repositorio Sergio\MinhasFinancas\Model\obj\Debug\Model.pdb
+C:\Users\62110\Desktop\MinhasFinancas\Model\bin\Debug\Model.dll
+C:\Users\62110\Desktop\MinhasFinancas\Model\bin\Debug\Model.pdb
+C:\Users\62110\Desktop\MinhasFinancas\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\62110\Desktop\MinhasFinancas\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\62110\Desktop\MinhasFinancas\Model\obj\Debug\Model.dll
+C:\Users\62110\Desktop\MinhasFinancas\Model\obj\Debug\Model.pdb

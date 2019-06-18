@@ -1,4 +1,5 @@
-﻿DROP TABLE contas_pagar;
+﻿-- Tabela Contas Receber --
+DROP TABLE contas_pagar;
 CREATE TABLE contas_pagar (
 
 	id INT PRIMARY KEY IDENTITY(1,1),
@@ -15,3 +16,15 @@ VALUES
 ('SKY' , 99.00, 'conta_tv', 'conta da tv', 'Pago');
 
 SELECT * FROM contas_pagar;
+
+-- Tabela Contas Receber -- 
+CREATE TABLE contas_receber(
+	id INT PRIMARY KEY IDENTITY(1,1),
+	nome VARCHAR(100),
+	valor DECIMAL(10,2),
+	tipo VARCHAR(100),
+	descricao TEXT,
+	status VARCHAR(100)
+
+);
+
