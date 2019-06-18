@@ -10,7 +10,7 @@ using Model;
 namespace Repository
 {
 
-    class ContaReceberRepositorio
+    public class ContaReceberRepositorio
     {
         private Conexao conexao;
 
