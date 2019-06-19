@@ -57,12 +57,14 @@ namespace View.Controllers
         public ActionResult Update(int id, string nome, decimal valor, string tipo, string descricao, string status)
         {
             ContaPagar conta = new ContaPagar();
+
             conta.Nome = nome;
             conta.Valor = valor;
             conta.Tipo = tipo;
             conta.Descricao = descricao;
             conta.Status = status;
             conta.Id = id;
+
             ContaPagarRepositorio repositorio = new ContaPagarRepositorio();
             repositorio.Atualizar(conta);
             return RedirectToAction("Index");

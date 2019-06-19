@@ -15,13 +15,19 @@ namespace View.Controllers
         {
             ContaReceberRepositorio repositorio = new ContaReceberRepositorio();
             List<ContaReceber> contas = repositorio.ObterTodos(pesquisa);
-            ViewBag.ContaReceber = contas;
+            ViewBag.ContasReceber = contas;
+            return View();
+        }
+
+        public ActionResult Cadastro()
+        {
             return View();
         }
 
         public ActionResult Store(string nome, decimal valor, string tipo, string descricao, string status)
         {
             ContaReceber conta = new ContaReceber();
+
             conta.Nome = nome;
             conta.Valor = valor;
             conta.Tipo = tipo;
@@ -30,6 +36,7 @@ namespace View.Controllers
 
             ContaReceberRepositorio repositorio = new ContaReceberRepositorio();
             repositorio.Inserir(conta);
+
             return RedirectToAction("Index");
 
         }
@@ -44,21 +51,21 @@ namespace View.Controllers
         public ActionResult Editar(int id)
         {
             ContaReceberRepositorio repositorio = new ContaReceberRepositorio();
-            ContaReceber conta = repositorio.ObterPeloID(id);
+            ContaReceber conta = repositorio.ObterPeloId(id);
             ViewBag.ContaReceber = conta;
             return View();
         }
 
-        public ActionResult Update(string nome, decimal valor, string tipo, string descricao, string status, int id)
+        public ActionResult Update(int id, string nome, decimal valor, string tipo, string descricao, string status)
         {
             ContaReceber conta = new ContaReceber();
 
+            conta.Id = id;
             conta.Nome = nome;
             conta.Valor = valor;
             conta.Tipo = tipo;
             conta.Descricao = descricao;
             conta.Status = status;
-            conta.Id = id;
 
             ContaReceberRepositorio repositorio = new ContaReceberRepositorio();
             repositorio.Atualizar(conta);

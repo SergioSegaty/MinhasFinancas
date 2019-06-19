@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastro</title>
+</head>
+<body>
+    <div> 
+        <form action="/enderecos/store" method="post">
+
+            <label for="campo-uf">Unidade Federativa</label>
+            <input type="text" name="unidade-federativa" id="campo-uf" />
+
+            <label for="campo-cicade">Cidade</label>
+            <input type="text" name="cidade" id="campo-cidade" />
+
+            <label for="campo-lagradouro">Lagradouro</label>
+            <input type="text" name="lagradouro" id="campo-lagradouro" />
+
+            <label for="campo-cep">CEP</label>
+            <input type="text" name="cep" id="campo-cep" />
+
+            <label for="campo-numero">Número</label>
+            <input type="text" name="numero" id="campo-numero" />
+
+            <label for="campo-complemento">Complemento</label>
+            <input type="text" name="complemento" id="campo-complemento" />
+
+            <button type="submit">Salvar</button>
+
+        </form>
+    </div>
+</body>
+</html>
