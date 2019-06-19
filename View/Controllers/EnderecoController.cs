@@ -65,13 +65,13 @@ namespace View.Controllers
         {
             Endereco endereco = new Endereco();
 
+            endereco.Id = id;
             endereco.Uf = uf;
             endereco.Cidade = cidade;
             endereco.Lagradouro = lagradouro;
             endereco.Cep = cep;
             endereco.Numero = numero;
             endereco.Complemento = complemento;
-            endereco.Id = id;
 
             EnderecoRepositorio repositorio = new EnderecoRepositorio();
             repositorio.Atualizar(endereco);
