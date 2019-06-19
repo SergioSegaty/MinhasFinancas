@@ -27,4 +27,28 @@ CREATE TABLE contas_receber(
 	status VARCHAR(100)
 
 );
+INSERT INTO contas_receber (nome, valor, tipo, descricao, status)
+VALUES
+('Desenvolvimento App', 3500, 'pagamento', 'trabalho de desenvolvimento', 'pendente');
+
+
+-- Tabela Endereços -- 
+DROP TABLE enderecos;
+CREATE TABLE enderecos(
+
+	id INT PRIMARY KEY IDENTITY(1,1),
+	uf VARCHAR(2),
+	cidade VARCHAR(100),
+	lagradouro VARCHAR(100),
+	cep VARCHAR(25),
+	numero VARCHAR(100),
+	complemento VARCHAR(100)
+
+);
+
+INSERT INTO enderecos (uf, cidade, lagradouro, cep , numero , complemento)
+VALUES
+('SC', 'Blumenau', '48151', '89021-000', '1930', 'Depois do Posto');
+
+SELECT * FROM enderecos
 

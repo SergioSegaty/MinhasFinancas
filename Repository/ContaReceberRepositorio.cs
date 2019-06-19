@@ -10,7 +10,7 @@ using Model;
 namespace Repository
 {
 
-    public class ContaReceberRepositorio
+    public class ContaReceberRepositorio : IRepositoryContasReceber
     {
         private Conexao conexao;
 
@@ -63,6 +63,7 @@ namespace Repository
                 conta.Valor = Convert.ToDecimal(linha["valor"]);
                 conta.Tipo = linha["tipo"].ToString();
                 conta.Status = linha["status"].ToString();
+                conta.Descricao = linha["descricao"].ToString();
                 contas.Add(conta);
             }
             return contas;
@@ -71,7 +72,7 @@ namespace Repository
         public bool Apagar(int id)
         {
             SqlCommand comando = conexao.Conectar();
-            comando.CommandText = @"DELETER FROM contas_receber WHERE id = @ID";
+            comando.CommandText = @"DELETE FROM contas_receber WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", id);
             int quantidadeAfetada = comando.ExecuteNonQuery();
             return quantidadeAfetada == 1;
@@ -80,7 +81,7 @@ namespace Repository
         public bool Atualizar(ContaReceber conta)
         {
             SqlCommand comando = conexao.Conectar();
-            comando.CommandText = @"UPDATE contas_recebidas SET
+            comando.CommandText = @"UPDATE contas_receber SET
             nome = @NOME,
             valor = @VALOR,
             tipo = @TIPO,
@@ -100,7 +101,7 @@ namespace Repository
             return quantidadeAfetada == 1;
         }
 
-        public ContaReceber ObterPeloID(int id)
+        public ContaReceber ObterPeloId(int id)
         {
             SqlCommand comando = conexao.Conectar();
             comando.CommandText = @"SELECT * FROM contas_receber WHERE id = @ID";
@@ -125,5 +126,7 @@ namespace Repository
             }
             return null;
         }
+
+       
     }
 }

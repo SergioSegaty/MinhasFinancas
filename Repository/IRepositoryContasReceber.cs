@@ -16,7 +16,7 @@ namespace Repository
 
         bool Apagar(int id);
 
-        bool Atualizar(int id);
+        bool Atualizar(ContaReceber conta);
 
         ContaReceber ObterPeloId(int id);
     }

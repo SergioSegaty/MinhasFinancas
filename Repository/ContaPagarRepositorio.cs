@@ -18,25 +18,6 @@ namespace Repository
             conexao = new Conexao();
         }
 
-        public int Inserir(ContaPagar conta)
-        {
-            SqlCommand comando = conexao.Conectar();
-            comando.CommandText = @"INSERT INTO contas_pagar
-            (nome, valor, tipo, descricao, status)
-            VALUES
-            (@NOME, @VALOR, @TIPO, @DESCRICAO, @STATUS)";
-
-            comando.Parameters.AddWithValue("@NOME", conta.Nome);
-            comando.Parameters.AddWithValue("@VALOR", conta.Valor);
-            comando.Parameters.AddWithValue("@TIPO", conta.Tipo);
-            comando.Parameters.AddWithValue("@DESCRICAO", conta.Descricao);
-            comando.Parameters.AddWithValue("@STATUS", conta.Status);
-
-            int id = Convert.ToInt32(comando.ExecuteScalar());
-            comando.Connection.Close();
-            return id;
-        }
-
         public List<ContaPagar> ObterTodos(string busca)
         {
             SqlCommand comando = conexao.Conectar();
@@ -65,6 +46,25 @@ namespace Repository
             }
             return contas;
 
+        }
+
+        public int Inserir(ContaPagar conta)
+        {
+            SqlCommand comando = conexao.Conectar();
+            comando.CommandText = @"INSERT INTO contas_pagar
+            (nome, valor, tipo, descricao, status)
+            VALUES
+            (@NOME, @VALOR, @TIPO, @DESCRICAO, @STATUS)";
+
+            comando.Parameters.AddWithValue("@NOME", conta.Nome);
+            comando.Parameters.AddWithValue("@VALOR", conta.Valor);
+            comando.Parameters.AddWithValue("@TIPO", conta.Tipo);
+            comando.Parameters.AddWithValue("@DESCRICAO", conta.Descricao);
+            comando.Parameters.AddWithValue("@STATUS", conta.Status);
+
+            int id = Convert.ToInt32(comando.ExecuteScalar());
+            comando.Connection.Close();
+            return id;
         }
 
         public bool Apagar(int id)
