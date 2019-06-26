@@ -106,8 +106,8 @@ namespace Repository
             comando.Parameters.AddWithValue("@COMPLEMENTO", endereco.Complemento);
             comando.Parameters.AddWithValue("@ID", endereco.Id);
 
-            comando.Connection.Close();
             int quantidadeAfetada = comando.ExecuteNonQuery();
+            comando.Connection.Close();
             return quantidadeAfetada == 1;
         }
 
@@ -124,6 +124,7 @@ namespace Repository
                 Endereco endereco = new Endereco();
                 DataRow linha = tabela.Rows[0];
 
+                endereco.Id = Convert.ToInt32(linha["id"]);
                 endereco.Cep = linha["cep"].ToString();
                 endereco.Lagradouro = linha["lagradouro"].ToString();
                 endereco.Numero = linha["numero"].ToString();

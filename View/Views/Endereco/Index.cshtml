@@ -14,7 +14,8 @@
     <div> 
         <h1>Lista Contas a Receber</h1>
     </div>
-    <form>
+    <a href="/endereco/cadastro">Novo Cadastro</a>
+    <form action="/endereco/index" method="get">
 
         <label for="campo-pesquisa">Busca</label>
         <input type="text" id="campo-pesquisa" name="pesquisa" />
@@ -47,6 +48,9 @@
 
                         <td>
                             <a href="/endereco/apagar?id=@ViewBag.Enderecos[i].Id">Apagar</a>
+                        </td>
+                        <td>
+                            <a href="/endereco/editar?id=@ViewBag.Enderecos[i].Id">Editar</a>
                         </td>
                     </tr>
 

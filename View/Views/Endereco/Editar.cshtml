@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Editar</title>
+</head>
+<body>
+    <div> 
+        <form action="/endereco/update" method="post">
+
+            <label for="campo-uf">Unidade Federativa</label>
+            <input type="text" name="uf" id="campo-uf"
+                   value="@ViewBag.Endereco.Uf" />
+
+            <label for="campo-cicade">Cidade</label>
+            <input type="text" name="cidade" id="campo-cidade"
+                   value="@ViewBag.Endereco.Cidade" />
+
+            <label for="campo-lagradouro">Lagradouro</label>
+            <input type="text" name="lagradouro" id="campo-lagradouro"
+                   value="@ViewBag.Endereco.Lagradouro" />
+
+            <label for="campo-cep">CEP</label>
+            <input type="text" name="cep" id="campo-cep"
+                   value="@ViewBag.Endereco.Cep" />
+
+            <label for="campo-numero">Número</label>
+            <input type="text" name="numero" id="campo-numero"
+                   value="@ViewBag.Endereco.Numero" />
+
+            <label for="campo-complemento">Complemento</label>
+            <input type="text" name="complemento" id="campo-complemento"
+                   value="@ViewBag.Endereco.Complemento" />
+
+            <input type="hidden" name="id" id="campo-id"
+                   value="@ViewBag.Endereco.Id" />
+
+            <button type="submit">Salvar</button>
+
+
+        </form>
+    </div>
+</body>
+</html>
